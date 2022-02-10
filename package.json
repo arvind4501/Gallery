@@ -13,11 +13,6 @@
   "version": "0.1.0",
   "devDependencies": {
     "webpack-dev-server": "^3"
-  },
-  
-  "scripts": {
-    
-    "start": "watchify the-path-to-your-source-jsx-file -v -t [ babelify --presets [ react ] ] -o the-path-to-your-output-js-file"
   }
 }
 
