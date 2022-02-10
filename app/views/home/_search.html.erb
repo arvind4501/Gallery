@@ -1,0 +1,15 @@
+
+<div class="input-group d-flex justify-content-center">
+  <div id="search-autocomplete" class="form-outline">
+    
+    <%= search_form_for @q, url: root_path do |f|%>
+    <%= f.search_field :tags_name_eq, placeholder: "search by tags", id:"form1", class: "form-control" %>
+    
+  </div>
+  <%= f.submit class: "btn btn-primary" %>
+    <% end %>
+  
+    
+  
+  
+</div>

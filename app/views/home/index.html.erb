@@ -1,0 +1,42 @@
+<div class="search mt-4 d-flex justify-content-center">
+  <%= render 'home/search' %>
+</div>
+<div class="row mt-4">
+  <div class="text-center">
+    <h3>ALBUMS</h3>
+  </div>
+<% @albums.each do |album| %>
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-header text-center">
+        <h5 class="card-title"><%= album.title %></h5>
+      </div>
+      <div class="card-body m-0 p-0">
+          <%= link_to image_tag(album.cover_image, class: "img-fluid"), album_path(album) %><br>
+      </div>
+      <div class="card-footer">
+        <h6 class="card-text"><%= album.description %></h6><br>
+      </div>
+      <div class="content">
+        <div class="time d-flex">
+          <b>Published At:-</b><%= album.created_at.to_date %>   
+        </div>
+        <div class="time d-flex">
+          <b>Updated At:-</b></h6><%= album.updated_at.to_date %>
+        </div>
+        <br>
+        <div class="totalimg d-flex">
+          <b>Total images:-</b><%= album.images.count %>
+        </div>
+        <div class="tags d-flex">
+          <b>Tags</b><p><%= album.all_tags %></p>
+        </div>
+      </div>
+    </div><br>
+    
+  </div>
+<% end %>
+</div><br>
+<div class="d-flex justify-content-center">
+  <%= link_to 'Create new album', new_album_path, class: "btn btn-success" %>
+</div><br>

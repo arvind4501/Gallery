@@ -1,0 +1,39 @@
+<div class="row mt-2">
+  <div class="text-center">
+    <h3>IMAGES</h3>
+  </div>
+    <% @album.images.each do |image|%>    
+      <div class="col-md-4">
+        <div class="card mt-4 mb-4">
+          <div class='card-body m-0 p-0'>
+            <%= image_tag(image,class:'img-fluid') %><br>  
+          </div>
+          <% if current_user.present? %>
+          <div class="card-footer">
+              <%= link_to purge_image_path(image), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" do %>
+                <i class="fas fa-trash"></i>
+              <% end %>
+              <%= link_to image, target: "_blank" do %>
+                <i class="fas fa-search-plus float-end fa-lg mt-2"></i>
+              <% end %>
+          </div> 
+          <% end %>
+        </div> 
+      </div>
+    <% end %>
+</div>
+<% if current_user.present? %>
+  <%= render 'addimage', album: @album %>
+<% end %>
+<div class="d-flex justify-content-center mb-4">
+  <% if current_user.present? %>
+    <%= link_to 'Back to albums', albums_path, class: "btn btn-dark "  %>&#160
+  <% else %>
+    <%= link_to 'Back', root_path, class: "btn btn-dark" %>
+  <% end %>&#160
+
+  <%= link_to 'edit album', edit_album_path(@album), class: "btn btn-success " %>&#160
+  <% if current_user.present? %>
+    <%= link_to 'destroy album', album_path(@album), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %>
+  <% end %>
+</div>

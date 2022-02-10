@@ -1,0 +1,38 @@
+<div class="input-group d-flex justify-content-center mt-4">
+  <div id="search-autocomplete" class="form-outline">
+    <%= search_form_for @q do |f|%>
+      <%= f.search_field :tags_name_eq, placeholder: "search by tags", id:"form1", class: "form-control" %>
+  </div>
+      <%= f.submit class: "btn btn-primary" %>
+    <% end %>
+</div>
+
+<div class="row mt-4">
+  <div class="text-center">
+    <h3>ALBUMS</h3>
+  </div>
+  <% @albums.each do |album| %>
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-header text-center">
+        <h5><%= album.title %></h5>
+      </div>
+      <div class="card-body m-0 p-0">
+        <%= link_to image_tag(album.cover_image, class: "img-fluid"), album_path(album) %><br>
+      </div>
+      <div class="card-body">
+        <h6 class="card-text"><%= album.description %></h6><br>
+        <div class="button d-flex justify-content-center">
+        <%= link_to 'edit', edit_album_path(album), class: "btn btn-dark" %>&#160 &#160
+        <%= link_to 'destroy', album_path(album), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %>
+      </div>
+      </div>
+    </div>
+    <br>
+    </div>
+  <% end %>
+</div>
+<br>
+<div class="d-flex justify-content-center">
+  <%= link_to 'Create new album', new_album_path, class: "btn btn-success" %>
+</div><br>   

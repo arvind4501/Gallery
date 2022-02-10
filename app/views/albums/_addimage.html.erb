@@ -1,0 +1,12 @@
+
+
+    <%= form_with model: album do |form| %>
+      <div class="field ">
+            <%= form.label :Add_image %>
+            <%= form.file_field :images ,:multiple => true, class: "form-control" %>
+      </div><br>
+      <div>
+        <%= form.submit "Add image", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+ 

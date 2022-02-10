@@ -1,0 +1,53 @@
+<div class="card"> 
+  <div class="card-body">
+    <%= form_with model: album do |form| %>
+      <% if album.errors.any? %>
+        <div style="color: red">
+          <h2><%= pluralize(album.errors.count, "error") %> prohibited this friend from being saved:</h2>
+          <ul>
+            <% album.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field form-group">
+      <%= form.text_field :title, class: "form-control", placeholder: "Title" %>
+    </div><br>
+
+    <div class="field ">
+      <%= form.label :cover_image %>
+      <%= form.file_field :cover_image, class: "form-control" %>
+    </div><br>
+
+    <div class="field form-group"> 
+      <%= form.text_area :description, class: "form-control", placeholder: "Description" %>
+      
+    </div>
+
+    <div class="field "> 
+      <%= form.number_field :user_id, id: :album_user_id, class: "form-control", value: current_user.id, type: :hidden %>
+    </div><br>
+
+    <div class="field ">
+      <%= form.label :image %>
+      <%= form.file_field :images ,:multiple => true, class: "form-control" %>
+    </div><br>
+
+    <div class="field form-group">
+      <%= form.text_field :all_tags, class: "form-control", placeholder: "Tags" %>
+    </div><br>
+
+    <div class="field ">
+      <%= form.label :publish %>
+      <%= form.check_box :published %>
+    </div><br>
+
+    <div>
+      <%= form.submit class: "btn btn-dark" %>
+    </div>
+  <% end %>
+  </div>
+</div>
+

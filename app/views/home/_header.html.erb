@@ -1,0 +1,77 @@
+<!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Gallery</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">  
+        <% if user_signed_in? %>  
+          <li class="nav-item">
+            <%= link_to 'My Albums',albums_path, class:'nav-link' %> 
+          </li>
+          <li class="nav-item">
+            <%= link_to 'New Album',new_album_path, class:'nav-link ' %> 
+          </li>
+          <li class="nav-item ">
+            <%= link_to 'Sign-Out',destroy_user_session_path, method: :delete, class:'nav-link ' %> 
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Edit Profile',edit_user_registration_path, class:'nav-link ' %> 
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to 'Home',root_path, class:'nav-link' %> 
+          </li>  
+            <li class=" nav-item  ">
+              <%= link_to 'Sign-In',new_user_session_path, class:'nav-link' %> 
+            </li>
+            <li class="nav-item ">
+              <%= link_to 'Sign-up',new_user_registration_path, class:'nav-link' %> 
+            </li>
+        <% end %>
+     </ul>
+    </div>
+  </div>
+</nav>-->
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <%= link_to "Gallery", root_path, class: "navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse fw-bold" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">  
+        <% if user_signed_in? %>  
+          <li class="nav-item">
+            <%= link_to 'My Albums',albums_path, class:'nav-link' %> 
+          </li>
+          <li class="nav-item">
+            <%= link_to 'New Album',new_album_path, class:'nav-link ' %> 
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Edit Profile',edit_user_registration_path, class:'nav-link ' %> 
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to 'Home',root_path, class:'nav-link' %> 
+          </li>  
+          
+        <% end %>
+     </ul>
+
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <% if user_signed_in? %>
+        <p class="mt-2 text-white">Signed in as:-</p>
+          <%= link_to current_user.email, edit_user_registration_path, class: "active nav-item nav-link fw-bold" %>
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-item nav-link btn btn-danger mb-1 text-white fw-bold" %>
+        <% else %>
+          <%= link_to "Sign up", new_user_registration_path, class: "nav-item nav-link text-white " %>
+          <%= link_to "Sign-in", new_user_session_path, class: "nav-item nav-link btn btn-primary text-white fw-bold" %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
