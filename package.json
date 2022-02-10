@@ -16,7 +16,8 @@
   },
   
   "scripts": {
-    "start": "node index.js"
+    
+    "start": "watchify the-path-to-your-source-jsx-file -v -t [ babelify --presets [ react ] ] -o the-path-to-your-output-js-file"
   }
 }
 
