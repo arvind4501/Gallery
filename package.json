@@ -10,8 +10,5 @@
   "version": "0.1.0",
   "scripts": {
     "start": "node application.js"
-  },
-  "devDependencies": {
-    "webpack-dev-server": "^3"
   }
 }
