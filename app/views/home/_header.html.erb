@@ -66,7 +66,7 @@
         <% if user_signed_in? %>
         <p class="mt-2 text-white">Signed in as:-</p>
           <%= link_to current_user.email, edit_user_registration_path, class: "active nav-item nav-link fw-bold" %>
-          <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-item nav-link btn btn-danger mb-1 text-white fw-bold" %>
+          <%= link_to "Sign out", destroy_user_session_path, method: :get, class: "nav-item nav-link btn btn-danger mb-1 text-white fw-bold" %>
         <% else %>
           <%= link_to "Sign up", new_user_registration_path, class: "nav-item nav-link text-white " %>
           <%= link_to "Sign-in", new_user_session_path, class: "nav-item nav-link btn btn-primary text-white fw-bold" %>
