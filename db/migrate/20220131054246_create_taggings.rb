@@ -1,4 +1,4 @@
-class CreateTaggings < ActiveRecord::Migration[7.0]
+class CreateTaggings < ActiveRecord::Migration[6.1]
   def change
     create_table :taggings do |t|
       t.references :album, null: false, foreign_key: true
