@@ -11,7 +11,7 @@ module Gallery2
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
-    config.serve_static_assets = true
+    
 
     # Configuration for the application, engines, and railties goes here.
     #
@@ -20,11 +20,7 @@ module Gallery2
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-<<<<<<< HEAD
+
     config.active_storage.replace_on_assign_to_many = false 
-=======
-    config.active_storage.replace_on_assign_to_many = false
-    
->>>>>>> 2b59363d3408c72c90bd141633bce24f301a7279
   end
 end
