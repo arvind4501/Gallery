@@ -22,6 +22,11 @@ module Gallery2
     # config.eager_load_paths << Rails.root.join("extras")
 
 
+<<<<<<< HEAD
     config.active_storage.replace_on_assign_to_many = false
   end 
+=======
+    config.active_storage.replace_on_assign_to_many = false 
+  end
+>>>>>>> 0ac7041b4889a388373e552c18fb01ae1decd419
 end
