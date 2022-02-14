@@ -2,6 +2,7 @@ class Album < ApplicationRecord
   
   validates :title, presence: true
   validates :description, presence: true, length: { minimum: 10 }
+  validates :cover_image, presence: true
   
   has_many_attached :images
   has_one_attached :cover_image

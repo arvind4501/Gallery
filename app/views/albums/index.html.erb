@@ -17,9 +17,11 @@
       <div class="card-header text-center">
         <h5><%= album.title %></h5>
       </div>
-      <div class="card-body m-0 p-0">
-        <%= link_to image_tag(album.cover_image, class: "img-fluid"), album_path(album) %><br>
-      </div>
+      <% if album.cover_image.present? %>
+        <div class="card-body m-0 p-0">
+            <%= link_to image_tag(album.cover_image, class: "img-fluid"), album_path(album) %><br>
+        </div>
+      <% end %>
       <div class="card-body">
         <h6 class="card-text"><%= album.description %></h6><br>
         <div class="button d-flex justify-content-center">
