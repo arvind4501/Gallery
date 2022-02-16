@@ -118,6 +118,7 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
   config.action_mailer.default_url_options = { host: 'galleryarvind.herokuapp.com' }
+<<<<<<< HEAD
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :user_name => '7f11ae01d30ebe',
@@ -127,4 +128,6 @@ Rails.application.configure do
     :port => '2525',
     :authentication => :cram_md5
   }
+=======
+>>>>>>> c9e7ae3ba134706d9c6b37ecd0886cff2590aa7c
 end
